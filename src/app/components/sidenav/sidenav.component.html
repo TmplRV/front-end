@@ -1,8 +1,8 @@
-<div class="user">
-	<img src="https://github.com/takahashinguyen.png" alt="" />
-	<p *ngIf="!isCollapsed()">NguyenVietAnh</p>
-</div>
 <mat-nav-list>
+	<a class="user" mat-list-item routerLink="user">
+		<img matListItemAvatar src="https://github.com/takahashinguyen.png" alt="" />
+		<p matListItemTitle *ngIf="!isCollapsed()">Nguyễn Việt Anh</p>
+	</a>
 	@for (item of menuItems(); track item) {
 	<a mat-list-item [routerLink]="item.route">
 		<mat-icon matListItemIcon>{{ item.icon }}</mat-icon>

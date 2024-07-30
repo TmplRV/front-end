@@ -31,7 +31,7 @@ export class AppComponent {
 	ngOnInit(): void {
 		this.matIconReg.setDefaultFontSetClass('material-symbols-outlined');
 
-		this.observer.observe(['(max-width: 800px)']).subscribe((screenSize) => {
+		this.observer.observe(['(max-width: 1000px)']).subscribe((screenSize) => {
 			if (screenSize.matches) {
 				this.isMobile = true;
 			} else {
