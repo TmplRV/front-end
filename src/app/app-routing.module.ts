@@ -1,10 +1,11 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { LuckComponent } from './pages/luck/luck.component';
 import { FortuneComponent } from './pages/fortune/fortune.component';
 import { FameComponent } from './pages/fame/fame.component';
 import { UserComponent } from './pages/user/user.component';
 
-export const routes: Routes = [
+const routes: Routes = [
 	{
 		path: '',
 		pathMatch: 'full',
@@ -15,3 +16,9 @@ export const routes: Routes = [
 	{ path: 'fame', component: FameComponent },
 	{ path: 'user', component: UserComponent },
 ];
+
+@NgModule({
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule],
+})
+export class AppRoutingModule {}

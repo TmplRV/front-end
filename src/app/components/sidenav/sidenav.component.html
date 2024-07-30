@@ -1,4 +1,7 @@
-<app-user [isCollapsed]="isCollapsed" />
+<div class="user">
+	<img src="https://github.com/takahashinguyen.png" alt="" />
+	<p *ngIf="!isCollapsed()">NguyenVietAnh</p>
+</div>
 <mat-nav-list>
 	@for (item of menuItems(); track item) {
 	<a mat-list-item [routerLink]="item.route">
