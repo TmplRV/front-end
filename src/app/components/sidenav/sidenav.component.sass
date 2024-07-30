@@ -1,7 +1,7 @@
 .tabs
-	@apply flex flex-col pt-3
-	& a
-		@apply flex space-x-2 items-center
+	@apply pt-3
+	&	a
+		@apply px-0 justify-start
 		& mat-icon
 			@apply text-5xl h-12 w-12 scale-[70%]
 
@@ -9,3 +9,5 @@
 	@apply flex w-full items-center
 	& img
 		@apply sidebar-icon rounded-full scale-75	flex-none
+	& span
+		@apply text-ellipsis text-nowrap overflow-hidden
