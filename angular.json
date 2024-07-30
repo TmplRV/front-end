@@ -36,11 +36,7 @@
 								"input": "public"
 							}
 						],
-						"styles": [
-							"src/theme.scss",
-							"node_modules/ol/ol.css",
-							"src/styles.css"
-						],
+						"styles": ["node_modules/ol/ol.css", "src/styles.sass"],
 						"scripts": []
 					},
 					"configurations": {

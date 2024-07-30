@@ -1,5 +1,5 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, signal, ViewChild } from '@angular/core';
+import { Component, computed, signal, ViewChild } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { MatSidenav } from '@angular/material/sidenav';
 
@@ -18,14 +18,12 @@ export class AppComponent {
 	sidenav!: MatSidenav;
 	isMobile = true;
 	isCollapsed = signal(false);
+	menuIcon = computed(() =>
+		this.isCollapsed() ? 'temple_buddhist' : 'arrow_back_ios'
+	);
 
 	toggleMenu() {
-		if (this.isMobile) {
-			this.sidenav.toggle();
-			this.isCollapsed.set(false);
-		} else {
-			this.isCollapsed.set(!this.isCollapsed());
-		}
+		this.isCollapsed.set(!this.isCollapsed());
 	}
 
 	ngOnInit(): void {

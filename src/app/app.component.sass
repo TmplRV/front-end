@@ -1,5 +1,16 @@
-div
-	@apply absolute bg-white w-12 h-[98%] top-[1%] left-[1%] drop-shadow-md rounded-full flex flex-col
+.sidebar
+	@apply absolute bg-white h-[98%] top-[1%] left-[1%] drop-shadow-md rounded-[24px] flex flex-col max-w-[18%]
+	& button
+		@apply flex-none
+	& cp-sidenav
+		@apply flex-1
+
+.menu
+	@apply flex items-center
+	& mat-icon
+		@apply flex-none
+	& p
+		@apply flex-1
 
 cp-map
 	position: absolute

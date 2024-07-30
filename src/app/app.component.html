@@ -1,6 +1,17 @@
 <cp-map />
-<div>
-	<button (click)="toggleMenu()">
-		<mat-icon>menu</mat-icon>
+<div class="sidebar">
+	<button
+		(click)="toggleMenu()"
+		[ngClass]="
+			isCollapsed()
+				? 'ds-btn ds-btn-circle scale-75 h-12'
+				: 'ds-btn rounded-[24px] w-full static h-9'
+		"
+	>
+		<div class="menu" [ngClass]="isCollapsed() ? '' : 'w-full'">
+			<mat-icon>{{ menuIcon() }}</mat-icon>
+			<p *ngIf="!isCollapsed()">TmplRV</p>
+		</div>
 	</button>
+	<cp-sidenav [isCollapsed]="isCollapsed" />
 </div>

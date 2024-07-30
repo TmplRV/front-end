@@ -1,16 +1,18 @@
-<mat-nav-list>
-	<a class="user" mat-list-item routerLink="user">
-		<img
-			matListItemAvatar
-			src="https://github.com/takahashinguyen.png"
-			alt=""
-		/>
-		<p matListItemTitle *ngIf="!isCollapsed()">Nguyễn Việt Anh</p>
-	</a>
-	@for (item of menuItems(); track item) {
-	<a mat-list-item [routerLink]="item.route">
-		<mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
-		<span matListItemTitle *ngIf="!isCollapsed()">{{ item.label }}</span>
-	</a>
-	}
-</mat-nav-list>
+<div class="flex flex-col justify-between h-full">
+	<div class="tabs">
+		@for (item of menuItems(); track item) {
+		<a [routerLink]="item.route">
+			<mat-icon>{{ item.icon }}</mat-icon>
+			<span *ngIf="!isCollapsed()">{{ item.label }}</span>
+		</a>
+		}
+	</div>
+	<button routerLink="user" class="ds-btn rounded-full px-0">
+		<div class="user">
+			<img src="https://github.com/takahashinguyen.png" />
+			<p *ngIf="!isCollapsed()">
+				Nguyễn Việt Anh aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+			</p>
+		</div>
+	</button>
+</div>
