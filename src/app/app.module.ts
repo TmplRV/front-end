@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
 	declarations: [
@@ -22,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button';
 		LuckComponent,
 		UserComponent,
 		SidenavComponent,
+		MapComponent,
 	],
 	imports: [
 		BrowserModule,

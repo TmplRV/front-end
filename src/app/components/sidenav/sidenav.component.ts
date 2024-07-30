@@ -6,7 +6,7 @@ export type MenuItems = {
 };
 
 @Component({
-	selector: 'app-sidenav',
+	selector: 'cp-sidenav',
 	templateUrl: './sidenav.component.html',
 	styleUrl: './sidenav.component.sass',
 })

@@ -7,9 +7,12 @@
 		<button (click)="toggleMenu()">
 			<mat-icon>menu</mat-icon>
 		</button>
-		<app-sidenav [isCollapsed]="isCollapsed" />
+		<cp-sidenav [isCollapsed]="isCollapsed" />
 	</mat-sidenav>
 	<mat-sidenav-content>
-		<router-outlet />
+		<cp-map />
+		<div>
+			<router-outlet />
+		</div>
 	</mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-fame',
-  templateUrl: './fame.component.html',
-  styleUrl: './fame.component.sass'
+	selector: 'pg-fame',
+	templateUrl: './fame.component.html',
+	styleUrl: './fame.component.sass',
 })
-export class FameComponent {
-
-}
+export class FameComponent {}

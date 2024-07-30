@@ -4,7 +4,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
-	selector: 'app-root',
+	selector: 'app',
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.sass',
 })
