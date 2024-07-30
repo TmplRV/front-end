@@ -12,6 +12,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
 	declarations: [
@@ -28,6 +29,7 @@ import { MatListModule } from '@angular/material/list';
 		MatIconModule,
 		MatSidenavModule,
 		MatListModule,
+		MatButtonModule,
 	],
 	providers: [provideAnimationsAsync()],
 	bootstrap: [AppComponent],

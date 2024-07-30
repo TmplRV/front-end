@@ -11,7 +11,7 @@ export type MenuItems = {
 	styleUrl: './sidenav.component.sass',
 })
 export class SidenavComponent {
-	@Input({ required: false }) isCollapsed = signal(false);
+	@Input({ required: true }) isCollapsed = signal(false);
 
 	menuItems = signal<MenuItems[]>([
 		{ icon: 'playing_cards', label: 'May mắn', route: 'luck' },
