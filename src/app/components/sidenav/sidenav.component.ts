@@ -13,15 +13,9 @@ export type MenuItems = {
 export class SidenavComponent {
 	@Input({ required: false }) isCollapsed = signal(false);
 
-
-
 	menuItems = signal<MenuItems[]>([
 		{ icon: 'playing_cards', label: 'May mắn', route: 'luck' },
 		{ icon: 'payments', label: 'Lộc tài', route: 'fortune' },
 		{ icon: 'rewarded_ads', label: 'Công danh', route: 'fame' },
 	]);
-
-	ngOnInit() {
-
-	}
 }
