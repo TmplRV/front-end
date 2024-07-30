@@ -1,30 +1,44 @@
-import { Component, computed, OnInit, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { Component, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+import { MatIconRegistry } from '@angular/material/icon';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
 	selector: 'app-root',
-	standalone: true,
-	imports: [
-		RouterOutlet,
-		MatSidenavModule,
-		MatIconModule,
-		MatButtonModule,
-		SidenavComponent,
-	],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.sass',
 })
-export class AppComponent implements OnInit {
-	constructor(private matIconReg: MatIconRegistry) {}
+export class AppComponent {
+	constructor(
+		private matIconReg: MatIconRegistry,
+		private observer: BreakpointObserver
+	) {}
+
+	@ViewChild(MatSidenav)
+	sidenav!: MatSidenav;
+
+	isMobile = true;
+	isCollapsed = true;
+
+	toggleMenu() {
+		if (this.isMobile) {
+			this.sidenav.toggle();
+			this.isCollapsed = false; // On mobile, the menu can never be collapsed
+		} else {
+			this.sidenav.open(); // On desktop/tablet, the menu can never be fully closed
+			this.isCollapsed = !this.isCollapsed;
+		}
+	}
 
 	ngOnInit(): void {
 		this.matIconReg.setDefaultFontSetClass('material-symbols-outlined');
-	}
 
-	sidenavCollapsed = signal(false)
-	sidenavWidth = computed(() => this.sidenavCollapsed() ? '70px' : '250px')
+		this.observer.observe(['(max-width: 800px)']).subscribe((screenSize) => {
+			if (screenSize.matches) {
+				this.isMobile = true;
+			} else {
+				this.isMobile = false;
+			}
+		});
+	}
 }
