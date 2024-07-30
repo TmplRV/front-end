@@ -8,7 +8,7 @@ describe('FortuneComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FortuneComponent]
+      declarations: [FortuneComponent]
     })
     .compileComponents();
 

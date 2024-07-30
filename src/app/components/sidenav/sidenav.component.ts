@@ -1,13 +1,4 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input, signal, ViewChild } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { UserComponent } from './user/user.component';
-import { RouterModule } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenav } from '@angular/material/sidenav';
-import { BreakpointObserver } from '@angular/cdk/layout';
-
+import { Component, Input, signal } from '@angular/core';
 export type MenuItems = {
 	icon: string;
 	label: string;
@@ -16,15 +7,6 @@ export type MenuItems = {
 
 @Component({
 	selector: 'app-sidenav',
-	standalone: true,
-	imports: [
-		MatListModule,
-		MatIconModule,
-		CommonModule,
-		UserComponent,
-		RouterModule,
-		MatButtonModule,
-	],
 	templateUrl: './sidenav.component.html',
 	styleUrl: './sidenav.component.sass',
 })

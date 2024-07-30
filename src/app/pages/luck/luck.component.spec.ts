@@ -8,7 +8,7 @@ describe('LuckComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LuckComponent]
+      declarations: [LuckComponent]
     })
     .compileComponents();
 
