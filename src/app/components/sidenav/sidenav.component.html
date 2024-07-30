@@ -4,9 +4,17 @@
 		<p matListItemTitle *ngIf="!isCollapsed()">Nguyễn Việt Anh</p>
 	</a>
 	@for (item of menuItems(); track item) {
-	<a mat-list-item [routerLink]="item.route">
-		<mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
-		<span matListItemTitle *ngIf="!isCollapsed()">{{ item.label }}</span>
+	<a
+		mat-list-item
+		[routerLink]="item.route"
+		routerLinkActive
+		#rla="routerLinkActive"
+		[activated]="rla.isActive"
+	>
+		<span>
+			<mat-icon>{{ item.icon }}</mat-icon>
+			<span>{{ item.label }}</span>
+		</span>
 	</a>
 	}
 </mat-nav-list>
