@@ -1,7 +1,12 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, computed, signal, ViewChild } from '@angular/core';
+import {
+	Component,
+	computed,
+	ElementRef,
+	signal,
+	ViewChild,
+} from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
-import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
 	selector: 'app',
@@ -14,8 +19,6 @@ export class AppComponent {
 		private observer: BreakpointObserver
 	) {}
 
-	@ViewChild(MatSidenav)
-	sidenav!: MatSidenav;
 	isMobile = true;
 	isCollapsed = signal(false);
 	menuIcon = computed(() =>
