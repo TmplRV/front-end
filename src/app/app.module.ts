@@ -13,7 +13,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MapComponent } from './components/map/map.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
 	declarations: [
@@ -32,8 +36,11 @@ import { MapComponent } from './components/map/map.component';
 		MatSidenavModule,
 		MatListModule,
 		MatButtonModule,
+		FormsModule,
+		MatCardModule,
+		MatFormFieldModule,
 	],
-	providers: [provideAnimationsAsync()],
+	providers: [provideAnimationsAsync(), provideHttpClient()],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
