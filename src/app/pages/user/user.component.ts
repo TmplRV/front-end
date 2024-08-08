@@ -22,7 +22,7 @@ export class UserComponent {
 					email: user.email,
 					password: user.password,
 				},
-				{ reportProgress: true, observe: 'events' }
+				{ reportProgress: true, observe: 'events', withCredentials: true }
 			)
 			.subscribe((res) => {
 				console.log('Response status:', res);

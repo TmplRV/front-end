@@ -37,7 +37,8 @@
 							}
 						],
 						"styles": ["node_modules/ol/ol.css", "src/styles.sass"],
-						"scripts": []
+						"scripts": [],
+						"allowedCommonJsDependencies": ["geotiff"]
 					},
 					"configurations": {
 						"production": {
@@ -93,6 +94,9 @@
 						"styles": [],
 						"scripts": []
 					}
+				},
+				"deploy": {
+					"builder": "angular-cli-ghpages:deploy"
 				}
 			}
 		}
